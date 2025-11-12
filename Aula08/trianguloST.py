@@ -31,8 +31,3 @@ if st.button("Calcular", icon="📏"):
         area = area_trapezio(A, B, C)
         st.error("Os valores NÃO formam um triângulo ❌")
         st.write(f"Área do Trapézio ⏢: = {area:.1f}")
-
-
-
-
-
