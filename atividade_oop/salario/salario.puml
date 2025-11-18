@@ -1,0 +1,8 @@
+@startuml Funcionario
+class Funcionario
+{
+    +nome : str
+    +salario: float 
+    +salario_medio(self,outro):float
+}
+@enduml
