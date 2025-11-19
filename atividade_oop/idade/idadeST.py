@@ -1,12 +1,19 @@
-import streamlit as st 
-import idadeOOP as p 
+import streamlit as st
+from idadeOOP import Pessoa
 
-nome1 = st.text_input()
-idade1 = st.number_input()
+st.title("Comparação de Idades👴👶🧒")
 
-nome2 = st.text_input()
-idade2 = st.number_input()
+nome1 = st.text_input("Nome da primeira pessoa:")
+idade1 = st.number_input("Idade da primeira pessoa:", step=1, format="%d")
 
-if st.button:
-    pessoas1 = p.Produto(nome1, idade1)
-    pessoas2 = p.Produto(nome2, idade2)
+nome2 = st.text_input("Nome da segunda pessoa:")
+idade2 = st.number_input("Idade da segunda pessoa:", step=1, format="%d")
+
+# Botão 
+if st.button("Comparar"):
+    p1 = Pessoa(nome1, idade1)
+    p2 = Pessoa(nome2, idade2)
+
+    resultado = p1.saida(p2)
+
+    st.success(resultado)

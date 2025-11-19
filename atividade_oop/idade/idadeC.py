@@ -1,4 +1,4 @@
-import idadeOOP as p
+import idadeOOP2 as p
 
 # Entrada de dados
 print("Entre com os dados das pessoas:")
@@ -9,11 +9,11 @@ idade1 = int(input("Idade da 1º Pessoa: "))
 nome2 = input("Nome da 2º Pessoa: ")
 idade2 = int(input("Idade da 2º Pessoa: "))
 
-# Criando objetos
+# Objetos
 p1 = p.Pessoa(nome1, idade1)
 p2 = p.Pessoa(nome2, idade2)
 
-# Impressão manual
+# Impressão 
 print(f'''
 Dados das pessoas:
     Nome da 1º pessoa: {p1.nome}
