@@ -36,12 +36,13 @@ class ContaPessoaFisica:#Super classe
     #4° Membro - Métodos
     def depositar(self, deposito:float) -> float:
         self._saldo += deposito
-    def saque(self, saque:float) -> float:
-        self._saldo -= saque - 5.00
+    def saque(self, saque:float) -> float:        
+        self._saldo -= saque + 5.00
     def dados(self) -> str:
-        saida = f''' Numero: {self._numeroDaConta}
-Titular: {self._titular}
-Saldo: {self._saldo}
+        saida = f'''
+        Numero: {self._numeroDaConta}
+        Titular: {self._titular}
+        Saldo: {self._saldo}
 '''
         return saida
 
@@ -73,8 +74,8 @@ class ContaPessoaJuridica(ContaPessoaFisica):#Sub classe da classe Conta Pessoa 
         return self._saldo
    
     def dados(self) -> str:
-        saida = f''' {super().dados()}
-Limite: {self._limite}
+        saida = f'''
+        {super().dados()}        Limite: {self._limite}
 '''
         return saida
 
@@ -110,6 +111,14 @@ conta2 = ContaPessoaJuridica(654321, "Adriano", 500, 100)
 conta3 = ContaPoupanca(789, "Vitor", -100)
 
 #Saida de dados 1
-print(f'''
-       
-''')
+print(f'''{conta1.dados()} {conta2.dados()} {conta3.dados()}''')
+conta1.depositar(200)
+print(f'Saldo após depósito na conta 1: {conta1._saldo}')
+conta1.saque(50)
+print(f'Saldo após saque na conta 1: {conta1._saldo}')
+#Saida de dados 2
+print(f'''{conta1.dados()} {conta2.dados()} {conta3.dados()}''')
+conta2.saque(100)
+print(f'Saldo após saque na conta 2: {conta2._saldo}')
+conta2.depositar(300)
+print(f'Saldo após depósito na conta 2: {conta2._saldo}')
