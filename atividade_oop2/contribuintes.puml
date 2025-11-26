@@ -1,0 +1,45 @@
+@startuml Contribuintes
+
+abstract class Contribuinte{
+  -- Atributos Privados --
+  - __nome: str
+  - __renda_anual: float
+
+  -- Propriedades (Getters/Setters) --
+  + _nome: str {get/set}
+  + _renda_anual: float {get/set}
+  
+  -- Métodos --
+  + __init__(nome: str, renda_anual: float)
+  + {abstract} calcular_imposto(): float
+  + exibir_dados(): str
+}
+
+class PessoaFisica{
+  -- Atributo Privado --
+  - __gastos_saude: float
+  
+  -- Propriedade (Getter/Setter) --
+  + _gastos_saude: float {get/set}
+
+  -- Métodos --
+  + __init__(nome: str, renda_anual: float, gastos_saude: float)
+  + calcular_imposto(): float
+}
+
+class PessoaJuridica{
+  -- Atributo Privado --
+  - __numero_funcionarios: int
+
+  -- Propriedade (Getter/Setter) --
+  + _numero_funcionarios: int {get/set}
+
+  -- Métodos --
+  + __init__(nome: str, renda_anual: float, numero_funcionarios: int)
+  + calcular_imposto(): float
+}
+
+Contribuinte <-- PessoaFisica
+Contribuinte <-- PessoaJuridica
+
+@enduml
